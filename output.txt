@@ -1,0 +1,130 @@
+### items[0:5]:
+[['Adjust bad debt'], ['Adjust bad debt'], ['Adjust bad debt'], ['Itemname'], ['WHITE HANGING HEART T-LIGHT HOLDER', 'WHITE METAL LANTERN', 'CREAM CUPID HEARTS COAT HANGER', 'KNITTED UNION FLAG HOT WATER BOTTLE', 'RED WOOLLY HOTTIE WHITE HEART.', 'SET 7 BABUSHKA NESTING BOXES', 'GLASS STAR FROSTED T-LIGHT HOLDER']]
+
+
+
+### transactions
+[[False False False ... False False False]
+ [False False False ... False False False]
+ [False False False ... False False False]
+ ...
+ [False False False ... False False False]
+ [False False False ... False False False]
+ [False False False ... False False False]]
+
+
+
+### itemsets.head()
+   *Boombox Ipod Classic  ...  wrongly sold sets
+0                  False  ...              False
+1                  False  ...              False
+2                  False  ...              False
+3                  False  ...              False
+4                  False  ...              False
+
+[5 rows x 4186 columns]
+
+
+
+### itemsets.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 21664 entries, 0 to 21663
+Columns: 4186 entries, *Boombox Ipod Classic to wrongly sold sets
+dtypes: bool(4186)
+memory usage: 86.5 MB
+None
+
+
+
+### frequent_itemsets
+    support                              itemsets
+0  0.095273             (JUMBO BAG RED RETROSPOT)
+1  0.087888            (REGENCY CAKESTAND 3 TIER)
+2  0.101643  (WHITE HANGING HEART T-LIGHT HOLDER)
+
+
+
+### frequent_itemsets.sort_values('support', ascending = False)
+    support                              itemsets
+2  0.101643  (WHITE HANGING HEART T-LIGHT HOLDER)
+0  0.095273             (JUMBO BAG RED RETROSPOT)
+1  0.087888            (REGENCY CAKESTAND 3 TIER)
+
+
+
+### frequent_itemsets[rows]
+Empty DataFrame
+Columns: [support, itemsets]
+Index: []
+
+
+
+### frequent_itemsets.groupby(length)['support'].describe()
+          count      mean       std  ...       50%       75%       max
+itemsets                             ...                              
+1           3.0  0.094935  0.006884  ...  0.095273  0.098458  0.101643
+
+[1 rows x 8 columns]
+
+
+
+### rules
+Empty DataFrame
+Columns: [antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction]
+Index: []
+
+
+
+### rules.describe()
+       antecedents consequents antecedent support  ... lift leverage conviction
+count            0           0                  0  ...    0        0          0
+unique           0           0                  0  ...    0        0          0
+top            NaN         NaN                NaN  ...  NaN      NaN        NaN
+freq           NaN         NaN                NaN  ...  NaN      NaN        NaN
+
+[4 rows x 9 columns]
+
+
+
+### rules.sort_values('lift', ascending = False).head()
+Empty DataFrame
+Columns: [antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction]
+Index: []
+
+
+
+### rules.sort_values('leverage', ascending = False).head()
+Empty DataFrame
+Columns: [antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction]
+Index: []
+
+
+
+### rules.sort_values('conviction', ascending = False).head()
+Empty DataFrame
+Columns: [antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction]
+Index: []
+
+
+
+### rules
+Empty DataFrame
+Columns: [antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction, zhang]
+Index: []
+
+
+
+### rules.sort_values('zhang', ascending = False).head()
+Empty DataFrame
+Columns: [antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction, zhang]
+Index: []
+
+
+
+### rules.sort_values('zhang').head()
+Empty DataFrame
+Columns: [antecedents, consequents, antecedent support, consequent support, support, confidence, lift, leverage, conviction, zhang]
+Index: []
+
+
+
