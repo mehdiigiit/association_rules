@@ -1,0 +1,215 @@
+### items[0:5]:
+[['Adjust bad debt'], ['Adjust bad debt'], ['Adjust bad debt'], ['Itemname'], ['WHITE HANGING HEART T-LIGHT HOLDER', 'WHITE METAL LANTERN', 'CREAM CUPID HEARTS COAT HANGER', 'KNITTED UNION FLAG HOT WATER BOTTLE', 'RED WOOLLY HOTTIE WHITE HEART.', 'SET 7 BABUSHKA NESTING BOXES', 'GLASS STAR FROSTED T-LIGHT HOLDER']]
+
+
+
+### transactions
+[[False False False ... False False False]
+ [False False False ... False False False]
+ [False False False ... False False False]
+ ...
+ [False False False ... False False False]
+ [False False False ... False False False]
+ [False False False ... False False False]]
+
+
+
+### itemsets.head()
+   *Boombox Ipod Classic  ...  wrongly sold sets
+0                  False  ...              False
+1                  False  ...              False
+2                  False  ...              False
+3                  False  ...              False
+4                  False  ...              False
+
+[5 rows x 4186 columns]
+
+
+
+### itemsets.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 21664 entries, 0 to 21663
+Columns: 4186 entries, *Boombox Ipod Classic to wrongly sold sets
+dtypes: bool(4186)
+memory usage: 86.5 MB
+None
+
+
+
+### frequent_itemsets
+       support                                           itemsets
+0     0.014402                           (10 COLOUR SPACEBOY PEN)
+1     0.011448                  (12 MESSAGE CARDS WITH ENVELOPES)
+2     0.016294                    (12 PENCIL SMALL TUBE WOODLAND)
+3     0.016617              (12 PENCILS SMALL TUBE RED RETROSPOT)
+4     0.016294                      (12 PENCILS SMALL TUBE SKULL)
+...        ...                                                ...
+1477  0.010017  (JUMBO BAG PINK POLKADOT, JUMBO BAG RED RETROS...
+1478  0.010801  (JUMBO BAG PINK POLKADOT, JUMBO BAG RED RETROS...
+1479  0.012325  (JUMBO BAG PINK POLKADOT, JUMBO BAG RED RETROS...
+1480  0.010247  (JUMBO BAG RED RETROSPOT, JUMBO SHOPPER VINTAG...
+1481  0.010247  (LUNCH BAG PINK POLKADOT, LUNCH BAG RED RETROS...
+
+[1482 rows x 2 columns]
+
+
+
+### frequent_itemsets.sort_values('support', ascending = False)
+       support                                           itemsets
+684   0.101643               (WHITE HANGING HEART T-LIGHT HOLDER)
+298   0.095273                          (JUMBO BAG RED RETROSPOT)
+487   0.087888                         (REGENCY CAKESTAND 3 TIER)
+401   0.076440                                    (PARTY BUNTING)
+335   0.071132                          (LUNCH BAG RED RETROSPOT)
+...        ...                                                ...
+1286  0.010017  (REGENCY TEAPOT ROSES, ROSES REGENCY TEACUP AN...
+989   0.010017  (JUMBO BAG PINK POLKADOT, TOY TIDY PINK POLKADOT)
+900   0.010017  (JAM MAKING SET PRINTED, SET OF 6 SPICE TINS P...
+892   0.010017  (LUNCH BAG RED RETROSPOT, JAM MAKING SET PRINTED)
+1088  0.010017  (RED TOADSTOOL LED NIGHT LIGHT, JUMBO STORAGE ...
+
+[1482 rows x 2 columns]
+
+
+
+### frequent_itemsets[rows]
+       support                                           itemsets
+1324  0.010247  (ALARM CLOCK BAKELIKE CHOCOLATE, ALARM CLOCK B...
+1325  0.011863  (ALARM CLOCK BAKELIKE IVORY, ALARM CLOCK BAKEL...
+1326  0.014125  (ALARM CLOCK BAKELIKE PINK, ALARM CLOCK BAKELI...
+1327  0.010247  (RED RETROSPOT CHARLOTTE BAG, CHARLOTTE BAG AP...
+1328  0.015140  (RED RETROSPOT CHARLOTTE BAG, CHARLOTTE BAG SU...
+...        ...                                                ...
+1477  0.010017  (JUMBO BAG PINK POLKADOT, JUMBO BAG RED RETROS...
+1478  0.010801  (JUMBO BAG PINK POLKADOT, JUMBO BAG RED RETROS...
+1479  0.012325  (JUMBO BAG PINK POLKADOT, JUMBO BAG RED RETROS...
+1480  0.010247  (JUMBO BAG RED RETROSPOT, JUMBO SHOPPER VINTAG...
+1481  0.010247  (LUNCH BAG PINK POLKADOT, LUNCH BAG RED RETROS...
+
+[158 rows x 2 columns]
+
+
+
+### frequent_itemsets.groupby(length)['support'].describe()
+          count      mean       std  ...       50%       75%       max
+itemsets                             ...                              
+1         716.0  0.020094  0.011629  ...  0.016340  0.023276  0.101643
+2         608.0  0.013808  0.004167  ...  0.012463  0.014956  0.037805
+3         147.0  0.012254  0.002065  ...  0.011771  0.013248  0.023772
+4          11.0  0.011145  0.000959  ...  0.011124  0.011725  0.012925
+
+[4 rows x 8 columns]
+
+
+
+### rules
+                                           antecedents  ... conviction
+0                    (60 CAKE CASES DOLLY GIRL DESIGN)  ...   2.144159
+1                        (60 TEATIME FAIRY CAKE CASES)  ...   2.068561
+2                     (ALARM CLOCK BAKELIKE CHOCOLATE)  ...   2.785921
+3                     (ALARM CLOCK BAKELIKE CHOCOLATE)  ...   2.986705
+4                         (ALARM CLOCK BAKELIKE IVORY)  ...   2.320169
+..                                                 ...  ...        ...
+609  (JUMBO SHOPPER VINTAGE RED PAISLEY, JUMBO BAG ...  ...   2.251818
+610  (LUNCH BAG PINK POLKADOT, LUNCH BAG RED RETROS...  ...   2.541686
+611  (LUNCH BAG PINK POLKADOT, LUNCH BAG RED RETROS...  ...   3.166182
+612  (LUNCH BAG PINK POLKADOT, LUNCH BAG CARS BLUE,...  ...   3.354853
+613  (LUNCH BAG RED RETROSPOT, LUNCH BAG CARS BLUE,...  ...   3.125775
+
+[614 rows x 9 columns]
+
+
+
+### rules.describe()
+       antecedent support  consequent support  ...    leverage  conviction
+count          614.000000          614.000000  ...  614.000000  614.000000
+mean             0.021630            0.049191  ...    0.012358    3.024759
+std              0.007581            0.022680  ...    0.003657    1.681023
+min              0.010755            0.010755  ...    0.008636    1.817275
+25%              0.016756            0.033108  ...    0.010038    2.138517
+50%              0.019572            0.047452  ...    0.011257    2.484101
+75%              0.024003            0.055899  ...    0.013140    3.323154
+max              0.058161            0.101643  ...    0.032479   18.839979
+
+[8 rows x 7 columns]
+
+
+
+### rules.sort_values('lift', ascending = False).head()
+                                           antecedents  ... conviction
+77                                 (HERB MARKER THYME)  ...  14.405206
+76                              (HERB MARKER ROSEMARY)  ...  13.616664
+524                           (REGENCY TEA PLATE PINK)  ...   6.046673
+523  (REGENCY TEA PLATE ROSES, REGENCY TEA PLATE GR...  ...   4.869116
+521  (REGENCY TEA PLATE ROSES, REGENCY TEA PLATE PINK)  ...  18.839979
+
+[5 rows x 9 columns]
+
+
+
+### rules.sort_values('leverage', ascending = False).head()
+                           antecedents  ... conviction
+89           (JUMBO BAG PINK POLKADOT)  ...   2.794959
+68   (ROSES REGENCY TEACUP AND SAUCER)  ...   3.430530
+67   (GREEN REGENCY TEACUP AND SAUCER)  ...   3.809055
+102           (JUMBO STORAGE BAG SUKI)  ...   2.332096
+7           (ALARM CLOCK BAKELIKE RED)  ...   2.490250
+
+[5 rows x 9 columns]
+
+
+
+### rules.sort_values('conviction', ascending = False).head()
+                                           antecedents  ... conviction
+521  (REGENCY TEA PLATE ROSES, REGENCY TEA PLATE PINK)  ...  18.839979
+533  (WOODEN TREE CHRISTMAS SCANDINAVIAN, WOODEN HE...  ...  14.657266
+77                                 (HERB MARKER THYME)  ...  14.405206
+76                              (HERB MARKER ROSEMARY)  ...  13.616664
+522  (REGENCY TEA PLATE GREEN, REGENCY TEA PLATE PINK)  ...  12.003095
+
+[5 rows x 9 columns]
+
+
+
+### rules
+                                           antecedents  ...     zhang
+0                    (60 CAKE CASES DOLLY GIRL DESIGN)  ...  0.912353
+1                        (60 TEATIME FAIRY CAKE CASES)  ...  0.925798
+2                     (ALARM CLOCK BAKELIKE CHOCOLATE)  ...  0.950361
+3                     (ALARM CLOCK BAKELIKE CHOCOLATE)  ...  0.948654
+4                         (ALARM CLOCK BAKELIKE IVORY)  ...  0.948685
+..                                                 ...  ...       ...
+609  (JUMBO SHOPPER VINTAGE RED PAISLEY, JUMBO BAG ...  ...  0.958901
+610  (LUNCH BAG PINK POLKADOT, LUNCH BAG RED RETROS...  ...  0.931906
+611  (LUNCH BAG PINK POLKADOT, LUNCH BAG RED RETROS...  ...  0.930789
+612  (LUNCH BAG PINK POLKADOT, LUNCH BAG CARS BLUE,...  ...  0.914594
+613  (LUNCH BAG RED RETROSPOT, LUNCH BAG CARS BLUE,...  ...  0.942711
+
+[614 rows x 10 columns]
+
+
+
+### rules.sort_values('zhang', ascending = False).head()
+                   antecedents  ...     zhang
+76      (HERB MARKER ROSEMARY)  ...  0.999195
+77         (HERB MARKER THYME)  ...  0.999148
+526  (REGENCY TEA PLATE GREEN)  ...  0.999082
+153  (REGENCY TEA PLATE GREEN)  ...  0.998379
+525  (REGENCY TEA PLATE ROSES)  ...  0.998258
+
+[5 rows x 10 columns]
+
+
+
+### rules.sort_values('zhang').head()
+                             antecedents  ...     zhang
+104          (RED RETROSPOT SHOPPER BAG)  ...  0.832690
+106             (TOY TIDY PINK POLKADOT)  ...  0.836027
+98             (JUMBO BAG VINTAGE DOILY)  ...  0.837206
+105                 (SUKI  SHOULDER BAG)  ...  0.841798
+303  (JUMBO BAG APPLES, JUMBO BAG PEARS)  ...  0.846624
+
+[5 rows x 10 columns]
+
+
+

@@ -44,4 +44,4 @@ After data preparation, the following are the list steps to take:
 12. Looking at the created rules, and getting to understand the distribution based on different metrics, such as lift, leverage, and conviction. We can use different metrics with different criteria to find suggestions.
 13. The Zhang metric can be defined as a method at the bottom of the code.
 
-The .ipynb version looks at the top 5000 transactions and provides a peak into the results. The .py version of the code, however, is also available and looks at the whole data. I ran the .py version as a job on an HPC cluster with parallel computation and big memory space. 
+The .ipynb version looks at the top 5000 transactions and provides a peak into the results. The .py version of the code, however, is also available and looks at the whole data. I ran the .py version as a job on an HPC cluster with parallel computation and big memory space. The output is stored in 'market_association_rules.output'.
