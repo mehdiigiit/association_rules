@@ -47,8 +47,8 @@ def main():
 	# MAIN CALL: Apriori algorithm
 	# Finding the frequent itemsets using the Apriori algo.
 	# The minimum support is set to 0.01. That can be interpreted to focusing on itemsets that 
-	# occur at least 17 times per day. There are 374 days in the dataset and 21,664 
-	# transactions. So the minimum support value is 17 * 306 / 522064 = 0.01.
+	# occur at least once per day. There are 306 days in the dataset and 21,664 
+	# transactions. So the minimum support value is 1 * 306 / 21664 ~ 0.01.
 	# We also set use_colnames to True, to have the names of items instead of indices.
 	frequent_itemsets = apriori(itemsets, min_support = 0.01, use_colnames = True)
 	print("### frequent_itemsets")
